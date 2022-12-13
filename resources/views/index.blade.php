@@ -21,6 +21,8 @@
 </head>
 <body>
 
+    <noscript>You need to enable JavaScript to run this application.</noscript>
+
     <div id="app">
         <main-page></main-page>
     </div>
