@@ -16,15 +16,15 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-5 col-6">
+                        <div class="mb-3 col-lg-3 col-md-4 col-sm-8 col-8">
                             <img class="rounded w-100" src="img/unnamed.jpg" alt="Photo">
                         </div>
 
-                        <div class="col-lg-8">
+                        <div class="col">
                             <h3 class="font-weight-bold text-blue">The position you are applying for</h3>
                             <p class="font-italic text-secondary">Office/remote/freelance, full-time/part-time</p>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-md">
                                     <ul class="data-list" style="list-style: none; padding: 0;">
                                         <li>
                                             <i class="bi bi-chevron-right text-primary"></i>
@@ -48,7 +48,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md">
                                     <ul class="data-list" style="list-style: none; padding: 0;">
                                         <li>
                                             <i class="bi bi-chevron-right text-primary"></i>
@@ -85,8 +85,8 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac sem sed turpis viverra convallis. Sed rutrum ante sit amet rhoncus volutpat. Proin et vestibulum mauris. Duis gravida quis lorem eget cursus. Curabitur et eleifend lorem. Sed ultricies non odio quis dignissim. Praesent eu urna eu ante egestas condimentum blandit et arcu. Nunc scelerisque mollis blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie id quam vel porta. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </div>
 
-                    <div class="row justify-content-around" data-aos="zoom-in">
-                        <div class="col-lg-3 col-md-6">
+                    <div class="row" data-aos="zoom-in">
+                        <div class="col-12 col-sm">
                             <div class="count-box">
                                 <i class="bi bi-emoji-smile"></i>
                                 <span class="font-weight-bold">0</span>
@@ -95,7 +95,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-sm">
                             <div class="count-box">
                                 <i class="bi bi-journal-richtext"></i>
                                 <span class="font-weight-bold">0</span>
@@ -104,7 +104,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-12 col-sm">
                             <div class="count-box">
                                 <i class="bi bi-headset"></i>
                                 <span class="font-weight-bold">0</span>
@@ -209,7 +209,7 @@
                     </div>
 
                     <div class="row pb-4">
-                        <div class="col-lg-6" data-aos="fade-up">
+                        <div class="col-12 col-sm-6" data-aos="fade-up">
                             <h3 class="font-weight-bold">Sumary</h3>
                             <div class="resume-item">
                                 <h4 class="text-uppercase font-weight-bold">Name Surname</h4>
@@ -230,7 +230,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6" data-aos="fade-up">
+                        <div class="col-12 col-sm-6" data-aos="fade-up">
                             <h3 class="font-weight-bold">Professional Experience</h3>
                             <div class="resume-item">
                                 <h4 class="text-uppercase font-weight-bold">YOUR POSITION</h4>
@@ -269,7 +269,7 @@
                     </div> -->
 
                     <div class="row justify-content-around" data-aos="zoom-in">
-                        <div class="border portfolio-wrap col-lg-2 col-md-3 col-sm-4 p-0 mb-5">
+                        <div class="border portfolio-wrap col-8 col-sm-3 col-md-2 p-0 mb-5">
                             <img class="rounded w-100" src="/img/unnamed.jpg" alt="Your portfolio project">
 
                             <div class="btn-group portfolio-links" role="group">
@@ -283,7 +283,7 @@
                             </div>
                         </div>
 
-                        <div class="border portfolio-wrap col-lg-2 col-md-3 col-sm-4 p-0 mb-5">
+                        <div class="border portfolio-wrap col-8 col-sm-3 col-md-2 p-0 mb-5">
                             <img class="rounded w-100" src="/img/unnamed.jpg" alt="Your portfolio project">
 
                             <div class="portfolio-links btn-group" role="group">
@@ -297,7 +297,7 @@
                             </div>
                         </div>
 
-                        <div class="border portfolio-wrap col-lg-2 col-md-3 col-sm-4 p-0 mb-5">
+                        <div class="border portfolio-wrap col-8 col-sm-3 col-md-2 p-0 mb-5">
                             <img class="rounded w-100" src="/img/unnamed.jpg" alt="Your portfolio project">
 
                             <div class="portfolio-links btn-group" role="group">
@@ -340,9 +340,9 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac sem sed turpis viverra convallis. Sed rutrum ante sit amet rhoncus volutpat. Proin et vestibulum mauris. Duis gravida quis lorem eget cursus. Curabitur et eleifend lorem. Sed ultricies non odio quis dignissim. Praesent eu urna eu ante egestas condimentum blandit et arcu. Nunc scelerisque mollis blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut molestie id quam vel porta. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </div>
 
-                    <div class="reviews pb-4">
+                    <div class="row reviews pb-4">
                         <!-- <h3 class="text-muted text-center">Your reviews...</h3> -->
-                        <div class="review-item" data-aos="fade-up">
+                        <div class="col-sm review-item" data-aos="fade-up">
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -352,7 +352,7 @@
                             <h3>Some person</h3>
                             <h4>Person position</h4>
                         </div>
-                        <div class="review-item" data-aos="fade-up">
+                        <div class="col-sm review-item" data-aos="fade-up">
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -362,7 +362,7 @@
                             <h3>Some person</h3>
                             <h4>Person position</h4>
                         </div>
-                        <div class="review-item" data-aos="fade-up">
+                        <div class="col-sm review-item" data-aos="fade-up">
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
