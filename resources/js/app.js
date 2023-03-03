@@ -5,11 +5,14 @@
  */
 
 require('./bootstrap');
-window.AOS = require('aos');
 
+import AOS from 'aos';
 AOS.init();
 
-window.Vue = require('vue').default;
+import Vue from 'vue';
+
+import loader from "vue-ui-preloader";
+Vue.use(loader);
 
 /**
  * The following block of code may be used to automatically register your

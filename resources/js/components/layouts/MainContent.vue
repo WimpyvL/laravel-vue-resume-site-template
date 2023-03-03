@@ -3,7 +3,7 @@
         <section id="home" class="h-100vh w-100 home-section d-flex overflow-auto align-items-center">
             <div class="about-me">
                 <h1 class="font-size-50 text-white">Name Surname</h1>
-                <h3 class="profession text-white">I'm <span id="profession-animation">Developer</span></h3>
+                <h3 class="profession text-white">I'm <span id="profession-animation">{{ this.profession }}</span></h3>
             </div>
         </section>
 
@@ -459,28 +459,31 @@
                                     <p class="mb-4 contact-info-text">+1234567890</p>
                                 </div>
 
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26556786.070929594!2d-116.97570703047097!3d35.65741775774772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2z0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1670618482401!5m2!1suk!2sua" width="600" height="450" style="border: 0; width: 100%; height: 290px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26556786.070929594!2d-116.97570703047097!3d35.65741775774772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2z0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1670618482401!5m2!1suk!2sua" style="border: 0; width: 100%; height: 295px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         <div data-aos="fade-up" class="col-lg-6 shadow-lg mb-3">
-                            <form class="p-4">
+                            <form @submit.prevent="validateForm" class="p-4">
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputName">Your name</label>
-                                        <input required type="text" class="form-control" id="inputName" placeholder="">
+                                        <label for="contactName">Your name</label>
+                                        <input v-model="contactForm.name" id="contactName" class="form-control" required type="text" placeholder="" maxlength="30">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputEmail">Your email</label>
-                                        <input required type="email" class="form-control" id="inputEmail" placeholder="">
+                                        <label for="contactEmail">Your email</label>
+                                        <input v-model="contactForm.email" id="contactEmail" class="form-control" required type="email" placeholder="" maxlength="50">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputSubject">Subject</label>
-                                    <input required type="text" class="form-control" id="inputSubject" placeholder="">
+                                    <label for="contactSubject">Subject</label>
+                                    <input v-model="contactForm.subject" id="contactSubject" required type="text" class="form-control" placeholder="" maxlength="30">
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputMessage">Message</label>
-                                    <textarea style="resize: none;" required class="form-control" id="inputMessage" placeholder="" rows="12" ></textarea>
+                                    <label for="contactMessage">Message</label>
+                                    <textarea v-model="contactForm.message" id="contactMessage" class="form-control" style="resize: none;" required placeholder="" rows="9" maxlength="500"></textarea>
+                                </div>
+                                <div style="visibility: hidden;" class="alert alert-success" role="alert">
+                                    <strong>{{ this.contactAlert.message }}</strong>
                                 </div>
                                 <div class="text-center">
                                     <button class="btn btn-primary" type="submit">Send message</button>
@@ -524,18 +527,17 @@ export default {
 
         showNav.onclick = function(e) {
             if (showNav.classList.contains("bi-list") && (document.documentElement.clientWidth <= 1180)) {
-                // aside.style.left = 0 + "px";
                 aside.classList.remove("hideAside");
                 aside.classList.add("showAside");
-                // mainContent.style.overflow = "auto";
-                //mainContent.classList.add("o-hid");
+
                 showNav.classList.remove("bi-list");
                 showNav.classList.add("bi-x");
             } else {
-                // aside.style.left = -300 + "px";
                 aside.classList.remove("showAside");
                 aside.classList.add("hideAside");
+
                 mainContent.style.overflow = "";
+
                 showNav.classList.remove("bi-x");
                 showNav.classList.add("bi-list");
             }
@@ -548,7 +550,7 @@ export default {
                 profession.innerHTML += "|";
                 this.counter = 1;
             } else {
-                profession.innerHTML = "Developer";
+                profession.innerHTML = this.profession;
                 this.counter = 0;
             }
         }, 300);
@@ -566,10 +568,51 @@ export default {
                 backToTop.classList.remove("active");
             }
         },
+        validateForm() {
+            let alert = document.querySelector(".alert");
+
+            alert.style.visibility = "visible";
+
+            if (alert.classList.contains("alert-danger")) alert.classList.remove("alert-danger");
+            if (alert.classList.contains("alert-success")) alert.classList.remove("alert-success");
+
+            alert.classList.add("alert-warning");
+            this.contactAlert.message = "Pending...";
+
+            axios.post("/api/send-mail", this.contactForm)
+                .then(res => {
+                    alert.classList.remove("alert-warning");
+                    alert.classList.add("alert-success");
+
+                    this.contactAlert.message = "Email sent successfully!";
+                })
+                .catch(err => {
+                    alert.classList.remove("alert-warning");
+                    alert.classList.add("alert-danger");
+
+                    if (err.response.status === 422) {
+                        this.contactAlert.message = "Error! " + err.response.data.message;
+                    } else {
+                        this.contactAlert.message = "Error! Please try again later.";
+                    }
+                });
+
+            this.contactForm.name = this.contactForm.email = this.contactForm.subject = this.contactForm.message = "";
+        },
     },
-    data: function () {
+    data() {
         return {
+            profession: "Profession",
             counter: 0,
+            contactForm: {
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+            },
+            contactAlert: {
+                message: "nothing",
+            },
         }
     },
 }
