@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,6 @@ use App\Http\Controllers\AppController;
 
 Route::get('/', [AppController::class, 'index']);
 
-// Auth::routes();
+Route::post('/send-email', [ContactController::class, 'index']);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

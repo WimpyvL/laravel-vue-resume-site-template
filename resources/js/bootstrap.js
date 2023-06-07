@@ -1,4 +1,12 @@
+import AOS from 'aos';
+import loader from "vue-ui-preloader";
+
 window._ = require('lodash');
+window.Vue = require('vue').default;
+
+Vue.use(loader);
+
+AOS.init();
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

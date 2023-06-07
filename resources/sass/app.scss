@@ -12,7 +12,6 @@
 @import "~aos/dist/aos.css";
 
 /* Header */
-
 aside {
     transition: .5s all;
     position: relative;
@@ -29,8 +28,8 @@ aside {
 }
 
 .nav-link {
-    padding: 12px 15px;
     cursor: pointer;
+    padding: 12px 15px;
     font-size: 16px;
     color: #A8A9B4;
 }

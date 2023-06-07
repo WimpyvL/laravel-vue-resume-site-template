@@ -4,15 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
-import AOS from 'aos';
-AOS.init();
-
-import Vue from 'vue';
-
-import loader from "vue-ui-preloader";
-Vue.use(loader);
+import './bootstrap';
 
 /**
  * The following block of code may be used to automatically register your
@@ -25,10 +17,7 @@ Vue.use(loader);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('main-page', require('./components/MainPage.vue').default);
-
-Vue.component('Main-Content', require('./components/layouts/MainContent.vue').default);
-Vue.component('Header', require('./components/layouts/Header.vue').default);
+Vue.component('app-view', require('./pages/Index.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -37,5 +26,5 @@ Vue.component('Header', require('./components/layouts/Header.vue').default);
  */
 
 const app = new Vue({
-    el: '#app',
+    el: 'app-view',
 });

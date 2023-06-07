@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-mix.sourceMaps();
 
 /*
  |--------------------------------------------------------------------------
@@ -13,6 +12,7 @@ mix.sourceMaps();
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
+    .js('node_modules/popper.js/dist/popper.js', 'public/js')
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps();
